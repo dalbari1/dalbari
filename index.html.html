@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dolbari — Our Village</title>
+  <meta name="description" content="Welcome to Dolbari – farming, festivals and our cultural heritage.">
+  <style>
+    :root{
+      --accent:#2b7a78;
+      --accent-2:#6fb3b8;
+      --bg:#f7fbfb;
+      --card:#ffffff;
+      --muted:#556;
+      --radius:12px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0b1a1a;line-height:1.55}
+    header{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:48px 20px;border-bottom-left-radius:28px;border-bottom-right-radius:28px}
+    .container{max-width:1080px;margin:0 auto;padding:24px}
+    .brand{display:flex;gap:16px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:12px;background:rgba(255,255,255,0.15);display:grid;place-items:center;font-weight:700}
+    h1{font-size:32px;margin:0}
+    p.lead{margin:8px 0 0;opacity:0.95}
+    nav{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;padding:8px 12px;border-radius:10px;background:rgba(0,0,0,0.06)}
+
+    main{padding:28px 0}
+    .grid{display:grid;gap:20px}
+    .two-col{grid-template-columns:1fr 380px}
+    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(8,20,20,0.06)}
+
+    .about h2{margin-top:0}
+    .stats{display:flex;gap:12px;margin-top:12px}
+    .stat{flex:1;padding:12px;border-radius:10px;background:linear-gradient(180deg,rgba(43,122,120,0.06),rgba(43,122,120,0.02));text-align:center}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .gallery img{width:100%;height:140px;object-fit:cover;border-radius:10px;cursor:pointer}
+
+    .events li{margin-bottom:10px}
+    footer{margin-top:28px;padding:18px;text-align:center;color:var(--muted)}
+
+    /* responsive */
+    @media (max-width:900px){
+      .two-col{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:520px){
+      h1{font-size:22px}
+      .gallery img{height:110px}
+    }
+
+    /* simple modal */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,6,0.5);z-index:40}
+    .modal .modal-card{max-width:900px;width:96%;}
+    .modal img{width:100%;height:auto;border-radius:10px}
+    .close-btn{position:absolute;right:18px;top:18px;background:#fff;border-radius:999px;padding:6px 10px;border:none;cursor:pointer}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="brand">
+        <div class="logo">D</div>
+        <div>
+          <h1>Dolbari — हमारा गाँव</h1>
+          <p class="lead">स्वागत है Dolbari में — खेती, त्योहार और हमारी सांस्कृतिक धरोहर।</p>
+        </div>
+      </div>
+      <nav aria-label="मुख्य नेविगेशन">
+        <a href="#about">About Us</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#events">Event</a>
+        <a href="contactfrome.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid two-col">
+      <section class="card about">
+        <h2 id="about">Introduction to Dolbari</h2>
+        <p>Dolbari is a picturesque village with colorful festivals and gatherings every year. The people here are hardworking and have a strong respect for tradition.</p>
+        <div class="stats">
+          <div class="stat"><strong>Population</strong><div>~2,300</div></div>
+          <div class="stat"><strong>Main Economy</strong><div>कृषि</div></div>
+          <div class="stat"><strong>Distance (nearest city)</strong><div>18 km</div></div>
+        </div>
+
+        <h3 style="margin-top:18px">Our Specialties</h3>
+        <ul>
+          <li>Natural beauty</li>
+          <li>Culture and folk art</li>
+          <li>Friendly community</li>
+        </ul>
+
+        <h3 style="margin-top:18px">Mission</h3>
+        <p>Sharing information about village development plans, education and health facilities.</p>
+      </section>
+
+      <aside class="card">
+        <h3>Latest News</h3>
+        <p id="news">No new news available — you can add your own message.</p>
+
+        <h4 style="margin-top:16px">Quick Contact</h4>
+        <p><strong>Contact Person:</strong> Village Head</p>
+        <p><strong>Phone:</strong> +91 9XXXXXXXXX</p>
+
+        <h4 style="margin-top:16px">Note</h4>
+        <p style="font-size:13px;color:var(--muted)">
+This is a simple website template — add images and original information.</p>
+      </aside>
+    </div>
+
+    <section class="card" style="margin-top:20px">
+      <h2 id="gallery">Gallery</h2>
+      <p>Village photos — click to enlarge.</p>
+      <div class="gallery" id="galleryGrid">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=000" alt="खेती का मॉक" data-full="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=000">
+      <a href="https://maps.app.goo.gl/5JmbtZuZxwwruTbh7"><img src="data:image/jpeg;base64,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"></a>
+        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=000" alt="लोक कला" data-full="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=000">
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:20px">
+      <h2 id="events"></h2>
+      <ul class="events" id="eventsList">
+       
+      </ul>
+      <p style="font-size:13px;color:var(--muted)">Contact us below to add an event.</p>
+    </section>
+
+    
+
+    <footer>
+      <h4><p><a href="https://kankannarzary.lovestoblog.com/">Copyright © 2025-<span id="currentYear"></span> User. All Rights Reserved.</a></p><a href="https://kankannarzary.lovestoblog.com/"> </a> <script></script></h4>
+
+    </footer>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="modal-card card" style="position:relative;padding:12px">
+      <button class="close-btn" id="closeModal">✕</button>
+      <img id="modalImg" src="" alt="">
+    </div>
+  </div>
+
+  <script>
+    // footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // gallery modal
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+    document.querySelectorAll('#galleryGrid img').forEach(img => {
+      img.addEventListener('click', () => {
+        modalImg.src = img.dataset.full || img.src;
+        modal.style.display = 'flex';
+      });
+    });
+    document.getElementById('closeModal').addEventListener('click', ()=> modal.style.display='none');
+    modal.addEventListener('click', (e)=>{ if(e.target===modal) modal.style.display='none' });
+
+    // simple contact form handler (does not send anywhere — replace with your backend)
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = this.name.value.trim();
+      const phone = this.phone.value.trim();
+      const message = this.message.value.trim();
+      if(!name||!phone||!message){document.getElementById('formStatus').textContent='कृपया सभी फ़ील्ड भरें';return}
+      // demo: show message and clear
+      document.getElementById('formStatus').textContent='धन्यवाद! संदेश प्राप्त हुआ।';
+      this.reset();
+      setTimeout(()=>document.getElementById('formStatus').textContent='',4000);
+    });
+
+    // small helper: add event from prompt (example of dynamic update)
+    function addEvent(title,dateStr){
+      const ul = document.getElementById('eventsList');
+      const li = document.createElement('li');
+      li.innerHTML = `<strong>${title}</strong> — ${dateStr}`;
+      ul.appendChild(li);
+    }
+
+    // Example: you can programmatically add real data here
+    // addEvent('ग्राम सभा', '10 January 2026');
+  </script>
+</body>
+</html>
+
+
+ <script>
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'F12') {
+      e.preventDefault();
+    }
+  });
+</script>
+
+<style>
+  a:link {
+  color: rgb(0, 0, 0);
+  background-color: transparent;
+  text-decoration: none;
+}
+</style>
